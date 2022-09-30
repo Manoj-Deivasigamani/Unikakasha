@@ -1,0 +1,24 @@
+#Crypto
+def func(a):
+    k = len(a)//2
+    i = 0
+    k1 = -(k+1) if len(a) % 2 != 0 else -k
+    for j in range(k, k1, -1):
+        s = abs(j)
+        c = ord(a[i])-s
+        if not (97 <= c <= 122):
+            t = s-abs(97-ord(a[i]))
+            c = 122-(t-1)
+        print(chr(c), end='')
+        i += 1
+
+
+n = int(input())
+li = []
+if 1 <= n <= 50:
+    for i in range(n):
+        a = input()
+        li.append(a)
+    for i in li:
+        func(i)
+        print()
